@@ -1,0 +1,13 @@
+angular.module("iMeeting.controllers",[])
+    .controller("tabs-iMeeting",["$scope","$location","$http","$ionicHistory",function($scope,$ionicHistory){
+        //位置数据
+        //厂区数据
+        $scope.factorySite = {site1:"金桥厂区",site2:"xxx玉桥厂区",site3:"你妹厂区"}
+        $scope.site = {
+            "金桥厂区":["新行政楼","主楼","总装大楼","南楼","求是楼"],
+            "玉桥厂区":["大楼","二楼","三楼","四楼","五楼"],
+            "你妹厂区":["新行政楼","求毛楼"]
+        }
+    }])
+    .controller("tabs-reserve",function(){})
+    .controller("tabs-settings",function(){})

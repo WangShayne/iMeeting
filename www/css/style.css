@@ -1,0 +1,135 @@
+p,h1,h2,h3,h4,h5,h6,span,div{
+    font-family:"Microsoft Yahei";
+}
+.lf{
+    float:left;
+}
+.rt{
+    float:right;
+}
+.no-padding{
+    padding:0;
+}
+.no-lf-padding{
+    padding-left:0;
+    padding-right:0;
+}
+.inline-block{
+    display:inline-block;
+}
+.inline{
+    display:inline;
+}
+.theme-nav-bar{
+    background-color:#e60012;
+}
+.theme-text-color{
+    color:#e60012;
+}
+.title-text{
+    font-size:1.2em;
+    color:#ffffff;
+}
+.background-color{
+    background-color:#f4f4f4;
+}
+.list-style{
+    margin-top:20px;
+    border-top:#c9c9c9;
+}
+.list-item-style{
+    border:none;
+    min-height:1px;
+    padding: 0px;
+}
+.list-item-img{
+    padding-left:10px;
+    margin-left:10px;
+    line-height:60px;
+}
+.list-item-content{
+    line-height: 40px;
+    width:80%;
+    height:50px;
+    margin-right: 10px;
+}
+.list-item-content i{
+    display: inline-block;
+    margin-left:5px;
+}
+.list-item-content img{
+    display:inline-block;
+    width:25px;
+    height:25px;
+    margin-top:8px;
+}
+.list-item-img-first{
+    margin-top:15px;
+}
+.list-item-content-first{
+    margin-top:15px;
+}
+
+
+.list-item-last{
+    height: 50px;
+}
+.list-item-border-bottom{
+    border-bottom:1px solid #dedede;
+}
+.list-item-lf-text{
+    font-size: 1.1em;
+    color:#222222;
+    float:left;
+
+}
+.list-item-rt-text{
+    font-size: 1.1em;
+    color: #888888;
+    float:right;
+}
+.list-item{
+    height:100px;
+}
+.div-search{
+    width:80%;
+    text-align:center;
+    margin:16px auto 0px;
+
+}
+.button-search{
+    display:block;
+    width:100%;
+    height:50px;
+    background-color:#ffffff;
+    border:1px solid #cecece;
+    border-radius: 8px;
+    line-height:50px;
+    font-size:22px;
+    font-weight:bold;
+    color: #e60012;
+}
+.tab-text{
+    font-size:20px;
+}
+.font-bold{
+    font-weight: bold;
+}
+.nav-button-back{
+    color:#fff;
+    font-size:30px;
+}
+.nav-button-form{
+    width:60px;
+    height:32px;
+    background-color:transparent;
+    border:1px solid #fff;
+    border-radius:15px;
+    color:#fff;
+}
+.site-list-item-shadow{
+    box-shadow: -3px 0px 2px  #F3F3F3 inset;
+}
+.selected{
+    background-color: #F3F3F3 ;
+}

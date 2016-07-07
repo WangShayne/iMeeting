@@ -1,0 +1,28 @@
+<ion-view>
+  <ion-nav-title>
+      <span class="theme-text-color title-text">厂区位置</span>
+  </ion-nav-title>
+    <ion-nav-buttons side="left">
+       <button class="button button-clear" ng-click="goBack()"><i class="ion-arrow-left-c nav-button-back"></i></button>
+    </ion-nav-buttons>
+   <ion-nav-buttons side="right">
+       <button class="nav-button-form" ng-click="confirmSite()">确定</button>
+   </ion-nav-buttons>
+    <ion-content class="background-color">
+        <div class="row list-style no-lf-padding">
+            <div class="col-33">
+                <div class="list">
+                    <div class="item site-list-item-shadow" ng-class="{selected:$index==selectedRow1}" ng-repeat="x in factorySite" ng-bind="x" ng-model="x"  ng-click="showSite($index,$event);"> </div>
+                </div>
+            </div>
+            <div class="col-66">
+                <div class="list">
+                    <div class="item item-icon-right" ng-class="{selected:$index==selectedRow2}" ng-repeat="y in siteInfor"ng-click="selectedList2($index,$event)" >
+                        {{y}}    <i ng-class="{'icon ion-checkmark-round theme-text-color':$index==selectedRow2}"></i>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>
