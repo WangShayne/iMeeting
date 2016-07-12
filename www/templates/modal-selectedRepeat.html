@@ -1,0 +1,148 @@
+<ion-modal-view>
+    <ion-header-bar class="bar bar-header theme-nav-bar">
+        <button class="button button-clear" ng-click="modalRepeat.hide()"><i class="ion-arrow-left-c nav-button-back"></i></button>
+        <h1 class="title title-text">重复预定</h1>
+        <a class="button nav-button-form" ng-click="confirmRepeat()">确定</a>
+    </ion-header-bar>
+
+    <ion-content class="background-color no-border">
+        <div class="repeat-tips">
+            <!-- 每周重复提示 -->
+            <p ng-if="repeat.week.val">
+                会议室将在每周<span ng-if="chooseWeek.day1.val">{{chooseWeek.day1.name}}<span ng-if="chooseWeek.day2.val||chooseWeek.day3.val||chooseWeek.day4.val||chooseWeek.day5.val||chooseWeek.day6.val||chooseWeek.day7.val">、</span></span><span ng-if="chooseWeek.day2.val">{{chooseWeek.day2.name}}<span ng-if="chooseWeek.day3.val||chooseWeek.day4.val||chooseWeek.day5.val||chooseWeek.day6.val||chooseWeek.day7.val">、</span></span><span ng-if="chooseWeek.day3.val">{{chooseWeek.day3.name}}<span ng-if="chooseWeek.day4.val||chooseWeek.day5.val||chooseWeek.day6.val||chooseWeek.day7.val">、</span></span><span ng-if="chooseWeek.day4.val">{{chooseWeek.day4.name}}<span ng-if="chooseWeek.day5.val||chooseWeek.day6.val||chooseWeek.day7.val">、</span></span><span ng-if="chooseWeek.day5.val">{{chooseWeek.day5.name}}<span ng-if="chooseWeek.day6.val||chooseWeek.day7.val">、</span></span><span ng-if="chooseWeek.day6.val">{{chooseWeek.day6.name}}<span ng-if="chooseWeek.day7.val">、</span></span><span ng-if="chooseWeek.day7.val">{{chooseWeek.day7.name}}</span>重复预订
+            </p>
+
+            <!-- 每月重复提示/ -->
+            <p ng-if="repeat.month.val">
+                会议室将在每月<span ng-if="chooseMonth.week1.day1.val">{{chooseMonth.week1.day1.name}}<span ng-if="chooseMonth.week1.day2.val||chooseMonth.week1.day3.val||chooseMonth.week1.day4.val||chooseMonth.week1.day5.val||chooseMonth.week1.day6.val||chooseMonth.week1.day7.val||chooseMonth.week2.day1.val||chooseMonth.week2.day2.val||chooseMonth.week2.day3.val||chooseMonth.week2.day4.val||chooseMonth.week2.day5.val||chooseMonth.week2.day6.val||chooseMonth.week2.day7.val||chooseMonth.week3.day1.val||chooseMonth.week3.day2.val||chooseMonth.week3.day3.val||chooseMonth.week3.day4.val||chooseMonth.week3.day5.val||chooseMonth.week3.day6.val||chooseMonth.week3.day7.val||chooseMonth.week4.day1.val||chooseMonth.week4.day2.val||chooseMonth.week4.day3.val||chooseMonth.week4.day4.val||chooseMonth.week4.day5.val||chooseMonth.week4.day6.val||chooseMonth.week4.day7.val">、</span></span><span ng-if="chooseMonth.week1.day2.val">{{chooseMonth.week1.day2.name}}<span ng-if="chooseMonth.week1.day3.val||chooseMonth.week1.day4.val||chooseMonth.week1.day5.val||chooseMonth.week1.day6.val||chooseMonth.week1.day7.val||chooseMonth.week2.day1.val||chooseMonth.week2.day2.val||chooseMonth.week2.day3.val||chooseMonth.week2.day4.val||chooseMonth.week2.day5.val||chooseMonth.week2.day6.val||chooseMonth.week2.day7.val||chooseMonth.week3.day1.val||chooseMonth.week3.day2.val||chooseMonth.week3.day3.val||chooseMonth.week3.day4.val||chooseMonth.week3.day5.val||chooseMonth.week3.day6.val||chooseMonth.week3.day7.val||chooseMonth.week4.day1.val||chooseMonth.week4.day2.val||chooseMonth.week4.day3.val||chooseMonth.week4.day4.val||chooseMonth.week4.day5.val||chooseMonth.week4.day6.val||chooseMonth.week4.day7.val">、</span></span><span ng-if="chooseMonth.week1.day3.val">{{chooseMonth.week1.day3.name}}<span ng-if="chooseMonth.week1.day4.val||chooseMonth.week1.day5.val||chooseMonth.week1.day6.val||chooseMonth.week1.day7.val||chooseMonth.week2.day1.val||chooseMonth.week2.day2.val||chooseMonth.week2.day3.val||chooseMonth.week2.day4.val||chooseMonth.week2.day5.val||chooseMonth.week2.day6.val||chooseMonth.week2.day7.val||chooseMonth.week3.day1.val||chooseMonth.week3.day2.val||chooseMonth.week3.day3.val||chooseMonth.week3.day4.val||chooseMonth.week3.day5.val||chooseMonth.week3.day6.val||chooseMonth.week3.day7.val||chooseMonth.week4.day1.val||chooseMonth.week4.day2.val||chooseMonth.week4.day3.val||chooseMonth.week4.day4.val||chooseMonth.week4.day5.val||chooseMonth.week4.day6.val||chooseMonth.week4.day7.val">、</span></span><span ng-if="chooseMonth.week1.day4.val">{{chooseMonth.week1.day4.name}}<span ng-if="chooseMonth.week1.day5.val||chooseMonth.week1.day6.val||chooseMonth.week1.day7.val||chooseMonth.week2.day1.val||chooseMonth.week2.day2.val||chooseMonth.week2.day3.val||chooseMonth.week2.day4.val||chooseMonth.week2.day5.val||chooseMonth.week2.day6.val||chooseMonth.week2.day7.val||chooseMonth.week3.day1.val||chooseMonth.week3.day2.val||chooseMonth.week3.day3.val||chooseMonth.week3.day4.val||chooseMonth.week3.day5.val||chooseMonth.week3.day6.val||chooseMonth.week3.day7.val||chooseMonth.week4.day1.val||chooseMonth.week4.day2.val||chooseMonth.week4.day3.val||chooseMonth.week4.day4.val||chooseMonth.week4.day5.val||chooseMonth.week4.day6.val||chooseMonth.week4.day7.val">、</span></span><span ng-if="chooseMonth.week1.day5.val">{{chooseMonth.week1.day5.name}}<span ng-if="chooseMonth.week1.day6.val||chooseMonth.week1.day7.val||chooseMonth.week2.day1.val||chooseMonth.week2.day2.val||chooseMonth.week2.day3.val||chooseMonth.week2.day4.val||chooseMonth.week2.day5.val||chooseMonth.week2.day6.val||chooseMonth.week2.day7.val||chooseMonth.week3.day1.val||chooseMonth.week3.day2.val||chooseMonth.week3.day3.val||chooseMonth.week3.day4.val||chooseMonth.week3.day5.val||chooseMonth.week3.day6.val||chooseMonth.week3.day7.val||chooseMonth.week4.day1.val||chooseMonth.week4.day2.val||chooseMonth.week4.day3.val||chooseMonth.week4.day4.val||chooseMonth.week4.day5.val||chooseMonth.week4.day6.val||chooseMonth.week4.day7.val">、</span></span><span ng-if="chooseMonth.week1.day6.val">{{chooseMonth.week1.day6.name}}<span ng-if="chooseMonth.week1.day7.val||chooseMonth.week2.day1.val||chooseMonth.week2.day2.val||chooseMonth.week2.day3.val||chooseMonth.week2.day4.val||chooseMonth.week2.day5.val||chooseMonth.week2.day6.val||chooseMonth.week2.day7.val||chooseMonth.week3.day1.val||chooseMonth.week3.day2.val||chooseMonth.week3.day3.val||chooseMonth.week3.day4.val||chooseMonth.week3.day5.val||chooseMonth.week3.day6.val||chooseMonth.week3.day7.val||chooseMonth.week4.day1.val||chooseMonth.week4.day2.val||chooseMonth.week4.day3.val||chooseMonth.week4.day4.val||chooseMonth.week4.day5.val||chooseMonth.week4.day6.val||chooseMonth.week4.day7.val">、</span></span><span ng-if="chooseMonth.week1.day7.val">{{chooseMonth.week1.day7.name}}<span ng-if="chooseMonth.week2.day1.val||chooseMonth.week2.day2.val||chooseMonth.week2.day3.val||chooseMonth.week2.day4.val||chooseMonth.week2.day5.val||chooseMonth.week2.day6.val||chooseMonth.week2.day7.val||chooseMonth.week3.day1.val||chooseMonth.week3.day2.val||chooseMonth.week3.day3.val||chooseMonth.week3.day4.val||chooseMonth.week3.day5.val||chooseMonth.week3.day6.val||chooseMonth.week3.day7.val||chooseMonth.week4.day1.val||chooseMonth.week4.day2.val||chooseMonth.week4.day3.val||chooseMonth.week4.day4.val||chooseMonth.week4.day5.val||chooseMonth.week4.day6.val||chooseMonth.week4.day7.val">、</span></span><span ng-if="chooseMonth.week2.day1.val">{{chooseMonth.week2.day1.name}}<span ng-if="chooseMonth.week2.day2.val||chooseMonth.week2.day3.val||chooseMonth.week2.day4.val||chooseMonth.week2.day5.val||chooseMonth.week2.day6.val||chooseMonth.week2.day7.val||chooseMonth.week3.day1.val||chooseMonth.week3.day2.val||chooseMonth.week3.day3.val||chooseMonth.week3.day4.val||chooseMonth.week3.day5.val||chooseMonth.week3.day6.val||chooseMonth.week3.day7.val||chooseMonth.week4.day1.val||chooseMonth.week4.day2.val||chooseMonth.week4.day3.val||chooseMonth.week4.day4.val||chooseMonth.week4.day5.val||chooseMonth.week4.day6.val||chooseMonth.week4.day7.val">、</span></span><span ng-if="chooseMonth.week2.day2.val">{{chooseMonth.week2.day2.name}}<span ng-if="chooseMonth.week2.day3.val||chooseMonth.week2.day4.val||chooseMonth.week2.day5.val||chooseMonth.week2.day6.val||chooseMonth.week2.day7.val||chooseMonth.week3.day1.val||chooseMonth.week3.day2.val||chooseMonth.week3.day3.val||chooseMonth.week3.day4.val||chooseMonth.week3.day5.val||chooseMonth.week3.day6.val||chooseMonth.week3.day7.val||chooseMonth.week4.day1.val||chooseMonth.week4.day2.val||chooseMonth.week4.day3.val||chooseMonth.week4.day4.val||chooseMonth.week4.day5.val||chooseMonth.week4.day6.val||chooseMonth.week4.day7.val">、</span></span><span ng-if="chooseMonth.week2.day3.val">{{chooseMonth.week2.day3.name}}<span ng-if="chooseMonth.week2.day4.val||chooseMonth.week2.day5.val||chooseMonth.week2.day6.val||chooseMonth.week2.day7.val||chooseMonth.week3.day1.val||chooseMonth.week3.day2.val||chooseMonth.week3.day3.val||chooseMonth.week3.day4.val||chooseMonth.week3.day5.val||chooseMonth.week3.day6.val||chooseMonth.week3.day7.val||chooseMonth.week4.day1.val||chooseMonth.week4.day2.val||chooseMonth.week4.day3.val||chooseMonth.week4.day4.val||chooseMonth.week4.day5.val||chooseMonth.week4.day6.val||chooseMonth.week4.day7.val">、</span></span><span ng-if="chooseMonth.week2.day4.val">{{chooseMonth.week2.day4.name}}<span ng-if="chooseMonth.week2.day5.val||chooseMonth.week2.day6.val||chooseMonth.week2.day7.val||chooseMonth.week3.day1.val||chooseMonth.week3.day2.val||chooseMonth.week3.day3.val||chooseMonth.week3.day4.val||chooseMonth.week3.day5.val||chooseMonth.week3.day6.val||chooseMonth.week3.day7.val||chooseMonth.week4.day1.val||chooseMonth.week4.day2.val||chooseMonth.week4.day3.val||chooseMonth.week4.day4.val||chooseMonth.week4.day5.val||chooseMonth.week4.day6.val||chooseMonth.week4.day7.val">、</span></span><span ng-if="chooseMonth.week2.day5.val">{{chooseMonth.week2.day5.name}}<span ng-if="chooseMonth.week2.day6.val||chooseMonth.week2.day7.val||chooseMonth.week3.day1.val||chooseMonth.week3.day2.val||chooseMonth.week3.day3.val||chooseMonth.week3.day4.val||chooseMonth.week3.day5.val||chooseMonth.week3.day6.val||chooseMonth.week3.day7.val||chooseMonth.week4.day1.val||chooseMonth.week4.day2.val||chooseMonth.week4.day3.val||chooseMonth.week4.day4.val||chooseMonth.week4.day5.val||chooseMonth.week4.day6.val||chooseMonth.week4.day7.val">、</span></span><span ng-if="chooseMonth.week2.day6.val">{{chooseMonth.week2.day6.name}}<span ng-if="chooseMonth.week2.day7.val||chooseMonth.week3.day1.val||chooseMonth.week3.day2.val||chooseMonth.week3.day3.val||chooseMonth.week3.day4.val||chooseMonth.week3.day5.val||chooseMonth.week3.day6.val||chooseMonth.week3.day7.val||chooseMonth.week4.day1.val||chooseMonth.week4.day2.val||chooseMonth.week4.day3.val||chooseMonth.week4.day4.val||chooseMonth.week4.day5.val||chooseMonth.week4.day6.val||chooseMonth.week4.day7.val">、</span></span><span ng-if="chooseMonth.week2.day7.val">{{chooseMonth.week2.day7.name}}<span ng-if="chooseMonth.week3.day1.val||chooseMonth.week3.day2.val||chooseMonth.week3.day3.val||chooseMonth.week3.day4.val||chooseMonth.week3.day5.val||chooseMonth.week3.day6.val||chooseMonth.week3.day7.val||chooseMonth.week4.day1.val||chooseMonth.week4.day2.val||chooseMonth.week4.day3.val||chooseMonth.week4.day4.val||chooseMonth.week4.day5.val||chooseMonth.week4.day6.val||chooseMonth.week4.day7.val">、</span></span><span ng-if="chooseMonth.week3.day1.val">{{chooseMonth.week3.day1.name}}<span ng-if="chooseMonth.week3.day2.val||chooseMonth.week3.day3.val||chooseMonth.week3.day4.val||chooseMonth.week3.day5.val||chooseMonth.week3.day6.val||chooseMonth.week3.day7.val||chooseMonth.week4.day1.val||chooseMonth.week4.day2.val||chooseMonth.week4.day3.val||chooseMonth.week4.day4.val||chooseMonth.week4.day5.val||chooseMonth.week4.day6.val||chooseMonth.week4.day7.val">、</span></span><span ng-if="chooseMonth.week3.day2.val">{{chooseMonth.week3.day2.name}}<span ng-if="chooseMonth.week3.day3.val||chooseMonth.week3.day4.val||chooseMonth.week3.day5.val||chooseMonth.week3.day6.val||chooseMonth.week3.day7.val||chooseMonth.week4.day1.val||chooseMonth.week4.day2.val||chooseMonth.week4.day3.val||chooseMonth.week4.day4.val||chooseMonth.week4.day5.val||chooseMonth.week4.day6.val||chooseMonth.week4.day7.val">、</span></span><span ng-if="chooseMonth.week3.day3.val">{{chooseMonth.week3.day3.name}}<span ng-if="chooseMonth.week3.day4.val||chooseMonth.week3.day5.val||chooseMonth.week3.day6.val||chooseMonth.week3.day7.val||chooseMonth.week4.day1.val||chooseMonth.week4.day2.val||chooseMonth.week4.day3.val||chooseMonth.week4.day4.val||chooseMonth.week4.day5.val||chooseMonth.week4.day6.val||chooseMonth.week4.day7.val">、</span></span><span ng-if="chooseMonth.week3.day4.val">{{chooseMonth.week3.day4.name}}<span ng-if="chooseMonth.week3.day5.val||chooseMonth.week3.day6.val||chooseMonth.week3.day7.val||chooseMonth.week4.day1.val||chooseMonth.week4.day2.val||chooseMonth.week4.day3.val||chooseMonth.week4.day4.val||chooseMonth.week4.day5.val||chooseMonth.week4.day6.val||chooseMonth.week4.day7.val">、</span></span><span ng-if="chooseMonth.week3.day5.val">{{chooseMonth.week3.day5.name}}<span ng-if="chooseMonth.week3.day6.val||chooseMonth.week3.day7.val||chooseMonth.week4.day1.val||chooseMonth.week4.day2.val||chooseMonth.week4.day3.val||chooseMonth.week4.day4.val||chooseMonth.week4.day5.val||chooseMonth.week4.day6.val||chooseMonth.week4.day7.val">、</span></span><span ng-if="chooseMonth.week3.day6.val">{{chooseMonth.week3.day6.name}}<span ng-if="chooseMonth.week3.day7.val||chooseMonth.week4.day1.val||chooseMonth.week4.day2.val||chooseMonth.week4.day3.val||chooseMonth.week4.day4.val||chooseMonth.week4.day5.val||chooseMonth.week4.day6.val||chooseMonth.week4.day7.val">、</span></span><span ng-if="chooseMonth.week3.day7.val">{{chooseMonth.week3.day7.name}}<span ng-if="chooseMonth.week4.day1.val||chooseMonth.week4.day2.val||chooseMonth.week4.day3.val||chooseMonth.week4.day4.val||chooseMonth.week4.day5.val||chooseMonth.week4.day6.val||chooseMonth.week4.day7.val">、</span></span><span ng-if="chooseMonth.week4.day1.val">{{chooseMonth.week4.day1.name}}<span ng-if="chooseMonth.week4.day2.val||chooseMonth.week4.day3.val||chooseMonth.week4.day4.val||chooseMonth.week4.day5.val||chooseMonth.week4.day6.val||chooseMonth.week4.day7.val">、</span></span><span ng-if="chooseMonth.week4.day2.val">{{chooseMonth.week4.day2.name}}<span ng-if="chooseMonth.week4.day3.val||chooseMonth.week4.day4.val||chooseMonth.week4.day5.val||chooseMonth.week4.day6.val||chooseMonth.week4.day7.val">、</span></span><span ng-if="chooseMonth.week4.day3.val">{{chooseMonth.week4.day3.name}}<span ng-if="chooseMonth.week4.day4.val||chooseMonth.week4.day5.val||chooseMonth.week4.day6.val||chooseMonth.week4.day7.val">、</span></span><span ng-if="chooseMonth.week4.day4.val">{{chooseMonth.week4.day4.name}}<span ng-if="chooseMonth.week4.day5.val||chooseMonth.week4.day6.val||chooseMonth.week4.day7.val">、</span></span><span ng-if="chooseMonth.week4.day5.val">{{chooseMonth.week4.day5.name}}<span ng-if="chooseMonth.week4.day6.val||chooseMonth.week4.day7.val">、</span></span><span ng-if="chooseMonth.week4.day6.val">{{chooseMonth.week4.day6.name}}<span ng-if="chooseMonth.week4.day7.val">、</span></span><span ng-if="chooseMonth.week4.day7.val">{{chooseMonth.week4.day7.name}}</span>重复预订
+            </p>
+        </div>
+
+        <div class="repeat-tab">
+            <span class="lf">频率</span>
+            <div class="rt">
+                <button ng-class="{'repeat-tab-buttons-active':repeat.week.val}" class="repeat-tab-buttons" ng-click="toggleWeek()">每周</button>
+                <button ng-class="{'repeat-tab-buttons-active':repeat.month.val}" class="repeat-tab-buttons" ng-click="toggleMonth()">每月</button>
+            </div>
+        </div>
+        <!-- 每周重复 -->
+        <div class="list list-style" ng-if="repeat.week.val">
+            <div class="item no-padding repeat-item-style"  ng-click="day1()">
+                <div class="repeat-item-content">
+                    <span class="lf">星期一</span>
+                            <span class="rt">
+                               <i  ng-if="chooseWeek.day1.val" class="icon ion-checkmark-round theme-text-color"></i>
+                            </span>
+                </div>
+            </div>
+            <div class="item no-padding repeat-item-style"  ng-click="day2()">
+                <div class="repeat-item-content">
+                    <span class="lf">星期二</span>
+                            <span class="rt">
+                               <i  ng-if="chooseWeek.day2.val" class="icon ion-checkmark-round theme-text-color"></i>
+                            </span>
+                </div>
+            </div>
+            <div class="item no-padding repeat-item-style"  ng-click="day3()">
+                <div class="repeat-item-content">
+                    <span class="lf">星期三</span>
+                            <span class="rt">
+                               <i  ng-if="chooseWeek.day3.val" class="icon ion-checkmark-round theme-text-color"></i>
+                            </span>
+                </div>
+            </div>
+            <div class="item no-padding repeat-item-style"  ng-click="day4()">
+                <div class="repeat-item-content">
+                    <span class="lf">星期四</span>
+                            <span class="rt">
+                               <i  ng-if="chooseWeek.day4.val" class="icon ion-checkmark-round theme-text-color"></i>
+                            </span>
+                </div>
+            </div>
+            <div class="item no-padding repeat-item-style"  ng-click="day5()">
+                <div class="repeat-item-content">
+                    <span class="lf">星期五</span>
+                            <span class="rt">
+                               <i  ng-if="chooseWeek.day5.val" class="icon ion-checkmark-round theme-text-color"></i>
+                            </span>
+                </div>
+            </div>
+            <div class="item no-padding repeat-item-style"  ng-click="day6()">
+                <div class="repeat-item-content">
+                    <span class="lf">星期六</span>
+                            <span class="rt">
+                               <i  ng-if="chooseWeek.day6.val" class="icon ion-checkmark-round theme-text-color"></i>
+                            </span>
+                </div>
+            </div>
+            <div class="item no-padding repeat-item-style"  ng-click="day7()">
+                <div class="repeat-item-content">
+                    <span class="lf">星期日</span>
+                            <span class="rt">
+                               <i  ng-if="chooseWeek.day7.val" class="icon ion-checkmark-round theme-text-color"></i>
+                            </span>
+                </div>
+            </div>
+        </div>
+        <!-- 每月重复 -->
+        <div class="list list-style" ng-if="repeat.month.val">
+            <div class="row repeat-month">
+                <div class="col-20"></div>
+                <div class="col-20 repeat-month-week">第1周</div>
+                <div class="col-20 repeat-month-week">第2周</div>
+                <div class="col-20 repeat-month-week">第3周</div>
+                <div class="col-20 repeat-month-week">第4周</div>
+            </div>
+            <div class="row repeat-month">
+                <div class="col-20 repeat-month-day">星期一</div>
+                <div ng-class="{'repeat-block-active':chooseMonth.week1.day1.val}" class="col-20 repeat-block repeat-block-top repeat-block-left" ng-click="w1d1()"><i ng-class="{'icon ion-checkmark-round theme-text-color':chooseMonth.week1.day1.val}"></i></div>
+                <div ng-class="{'repeat-block-active':chooseMonth.week2.day1.val}" class="col-20 repeat-block repeat-block-top" ng-click="w2d1()"><i ng-class="{'icon ion-checkmark-round theme-text-color':chooseMonth.week2.day1.val}"></i></div>
+                <div ng-class="{'repeat-block-active':chooseMonth.week3.day1.val}" class="col-20 repeat-block repeat-block-top" ng-click="w3d1()"><i ng-class="{'icon ion-checkmark-round theme-text-color':chooseMonth.week3.day1.val}"></i></div>
+                <div ng-class="{'repeat-block-active':chooseMonth.week4.day1.val}" class="col-20 repeat-block repeat-block-top repeat-block-right" ng-click="w4d1()"><i ng-class="{'icon ion-checkmark-round theme-text-color':chooseMonth.week4.day1.val}"></i></div>
+            </div>
+            <div class="row repeat-month" >
+                <div class="col-20 repeat-month-day">星期二</div>
+                <div ng-class="{'repeat-block-active':chooseMonth.week1.day2.val}" class="col-20 repeat-block repeat-block-left" ng-click="w1d2()"><i ng-class="{'icon ion-checkmark-round theme-text-color':chooseMonth.week1.day2.val}"></i></div>
+                <div ng-class="{'repeat-block-active':chooseMonth.week2.day2.val}" class="col-20 repeat-block" ng-click="w2d2()"><i ng-class="{'icon ion-checkmark-round theme-text-color':chooseMonth.week2.day2.val}"></i></div>
+                <div ng-class="{'repeat-block-active':chooseMonth.week3.day2.val}" class="col-20 repeat-block" ng-click="w3d2()"><i ng-class="{'icon ion-checkmark-round theme-text-color':chooseMonth.week3.day2.val}"></i></div>
+                <div ng-class="{'repeat-block-active':chooseMonth.week4.day2.val}" class="col-20 repeat-block repeat-block-right" ng-click="w4d2()"><i ng-class="{'icon ion-checkmark-round theme-text-color':chooseMonth.week4.day2.val}"></i></div>
+            </div>
+            <div class="row repeat-month">
+                <div class="col-20 repeat-month-day">星期三</div>
+                <div ng-class="{'repeat-block-active':chooseMonth.week1.day3.val}" class="col-20 repeat-block repeat-block-left" ng-click="w1d3()"><i ng-class="{'icon ion-checkmark-round theme-text-color':chooseMonth.week1.day3.val}"></i></div>
+                <div ng-class="{'repeat-block-active':chooseMonth.week2.day3.val}" class="col-20 repeat-block" ng-click="w2d3()"><i ng-class="{'icon ion-checkmark-round theme-text-color':chooseMonth.week2.day3.val}"></i></div>
+                <div ng-class="{'repeat-block-active':chooseMonth.week3.day3.val}" class="col-20 repeat-block" ng-click="w3d3()"><i ng-class="{'icon ion-checkmark-round theme-text-color':chooseMonth.week3.day3.val}"></i></div>
+                <div ng-class="{'repeat-block-active':chooseMonth.week4.day3.val}" class="col-20 repeat-block repeat-block-right" ng-click="w4d3()"><i ng-class="{'icon ion-checkmark-round theme-text-color':chooseMonth.week4.day3.val}"></i></div>
+            </div>
+            <div class="row repeat-month">
+                <div class="col-20 repeat-month-day">星期四</div>
+                <div ng-class="{'repeat-block-active':chooseMonth.week1.day4.val}" class="col-20 repeat-block repeat-block-left" ng-click="w1d4()"><i ng-class="{'icon ion-checkmark-round theme-text-color':chooseMonth.week1.day4.val}"></i></div>
+                <div ng-class="{'repeat-block-active':chooseMonth.week2.day4.val}" class="col-20 repeat-block" ng-click="w2d4()"><i ng-class="{'icon ion-checkmark-round theme-text-color':chooseMonth.week2.day4.val}"></i></div>
+                <div ng-class="{'repeat-block-active':chooseMonth.week3.day4.val}" class="col-20 repeat-block" ng-click="w3d4()"><i ng-class="{'icon ion-checkmark-round theme-text-color':chooseMonth.week3.day4.val}"></i></div>
+                <div ng-class="{'repeat-block-active':chooseMonth.week4.day4.val}" class="col-20 repeat-block repeat-block-right repeat-block-bottom" ng-click="w4d4()"><i ng-class="{'icon ion-checkmark-round theme-text-color':chooseMonth.week4.day4.val}"></i></div>
+            </div>
+            <div class="row repeat-month">
+                <div class="col-20 repeat-month-day">星期五</div>
+                <div ng-class="{'repeat-block-active':chooseMonth.week1.day5.val}" class="col-20 repeat-block repeat-block-left" ng-click="w1d5()"><i ng-class="{'icon ion-checkmark-round theme-text-color':chooseMonth.week1.day5.val}"></i></div>
+                <div ng-class="{'repeat-block-active':chooseMonth.week2.day5.val}" class="col-20 repeat-block" ng-click="w2d5()"><i ng-class="{'icon ion-checkmark-round theme-text-color':chooseMonth.week2.day5.val}"></i></div>
+                <div ng-class="{'repeat-block-active':chooseMonth.week3.day5.val}" class="col-20 repeat-block" ng-click="w3d5()"><i ng-class="{'icon ion-checkmark-round theme-text-color':chooseMonth.week3.day5.val}"></i></div>
+                <div ng-class="{'repeat-block-active':chooseMonth.week4.day5.val}" class="col-20 repeat-block repeat-block-right repeat-block-bottom" ng-click="w4d5()"><i ng-class="{'icon ion-checkmark-round theme-text-color':chooseMonth.week4.day5.val}"></i></div>
+            </div>
+            <div class="row repeat-month">
+                <div class="col-20 repeat-month-day">星期六</div>
+                <div ng-class="{'repeat-block-active':chooseMonth.week1.day6.val}" class="col-20 repeat-block repeat-block-left" ng-click="w1d6()"><i ng-class="{'icon ion-checkmark-round theme-text-color':chooseMonth.week1.day6.val}"></i></div>
+                <div ng-class="{'repeat-block-active':chooseMonth.week2.day6.val}" class="col-20 repeat-block" ng-click="w2d6()"><i ng-class="{'icon ion-checkmark-round theme-text-color':chooseMonth.week2.day6.val}"></i></div>
+                <div ng-class="{'repeat-block-active':chooseMonth.week3.day6.val}" class="col-20 repeat-block" ng-click="w3d6()"><i ng-class="{'icon ion-checkmark-round theme-text-color':chooseMonth.week3.day6.val}"></i></div>
+                <div ng-class="{'repeat-block-active':chooseMonth.week4.day6.val}" class="col-20 repeat-block repeat-block-right repeat-block-bottom" ng-click="w4d6()"><i ng-class="{'icon ion-checkmark-round theme-text-color':chooseMonth.week4.day6.val}"></i></div>
+            </div>
+            <div class="row repeat-month">
+                <div class="col-20 repeat-month-day">星期日</div>
+                <div ng-class="{'repeat-block-active':chooseMonth.week1.day7.val}" class="col-20 repeat-block repeat-block-left" ng-click="w1d7()"><i ng-class="{'icon ion-checkmark-round theme-text-color':chooseMonth.week1.day7.val}"></i></div>
+                <div ng-class="{'repeat-block-active':chooseMonth.week2.day7.val}" class="col-20 repeat-block" ng-click="w2d7()"><i ng-class="{'icon ion-checkmark-round theme-text-color':chooseMonth.week2.day7.val}"></i></div>
+                <div ng-class="{'repeat-block-active':chooseMonth.week3.day7.val}" class="col-20 repeat-block" ng-click="w3d7()"><i ng-class="{'icon ion-checkmark-round theme-text-color':chooseMonth.week3.day7.val}"></i></div>
+                <div ng-class="{'repeat-block-active':chooseMonth.week4.day7.val}" class="col-20 repeat-block repeat-block-right repeat-block-bottom" ng-click="w4d7()"><i ng-class="{'icon ion-checkmark-round theme-text-color':chooseMonth.week4.day7.val}"></i></div>
+            </div>
+        </div>
+
+    </ion-content>
+</ion-modal-view>

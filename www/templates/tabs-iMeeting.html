@@ -4,29 +4,35 @@
   </ion-nav-title>
   <ion-content class="background-color">
         <div class="list list-style">
-            <div class="item list-item-style" ui-sref="location">
-                <div class="lf list-item-img list-item-img-first">
+            <div class="item list-item-style" ng-click="modalSite.show()">
+                <div class="lf list-item-img ">
                     <img src="img/icon_object.png"  alt=""/>
                 </div>
-                <div class="list-item-border-bottom  list-item-content list-item-content-first rt">
+                <div class="list-item-border-bottom  list-item-content rt">
                     <span class="list-item-lf-text">厂区位置</span>
-                    <span class="list-item-rt-text" ng-bind="iMeeting.siteName1 +'-'+ iMeeting.siteName2"> <i class="icon ion-ios-arrow-right"></i></span>
+                    <span class="list-item-rt-text">
+                        {{iMeeting.siteName1 +'-'+ iMeeting.siteName2}}
+                        <i class="icon ion-ios-arrow-right"></i></span>
                 </div>
             </div>
             <div class="item list-item-style">
                 <div class="lf list-item-img">
                     <img src="img/icon_person.png"  alt=""/>
                 </div>
-                <div class="list-item-border-bottom  list-item-content rt" ng-click="modal.show()" >
+                <div class="list-item-border-bottom  list-item-content rt" >
                     <span class="list-item-lf-text">参会人数</span>
-                    <span class="list-item-rt-text">6人<i class="icon ion-ios-arrow-right"></i></span>
+                    <span class="list-item-rt-text">
+                        <input type="text" class="list-item-input" ng-model="iMeeting.people"/>
+                        人
+                        <i class="icon ion-ios-arrow-right"></i>
+                    </span>
                 </div>
             </div>
             <div class="item list-item-style">
                 <div class="lf list-item-img">
                     <img src="img/icon_date.png"  alt=""/>
                 </div>
-                <div class="list-item-border-bottom  list-item-content rt">
+                <div class="list-item-border-bottom  list-item-content rt" ng-click="modalDate.show()">
                     <span class="list-item-lf-text">会议日期</span>
                     <span class="list-item-rt-text">2016-05-12<i class="icon ion-ios-arrow-right"></i></span>
                 </div>
@@ -35,7 +41,7 @@
                 <div class="lf list-item-img">
                     <img src="img/icon_begin.png"  alt=""/>
                 </div>
-                <div class="list-item-border-bottom  list-item-content rt">
+                <div class="list-item-border-bottom  list-item-content rt" ng-click="modalBegin.show()">
                     <span class="list-item-lf-text">开始时间</span>
                     <span class="list-item-rt-text">13:30<i class="icon ion-ios-arrow-right"></i></span>
                 </div>
@@ -44,7 +50,7 @@
                 <div class="lf list-item-img">
                     <img src="img/icon_end.png"  alt=""/>
                 </div>
-                <div class="list-item-border-bottom  list-item-content rt">
+                <div class="list-item-border-bottom  list-item-content rt" ng-click="modalFinish.show()">
                     <span class="list-item-lf-text">结束时间</span>
                     <span class="list-item-rt-text">16:00<i class="icon ion-ios-arrow-right"></i></span>
                 </div>
@@ -53,28 +59,42 @@
                 <div class="lf list-item-img">
                     <img src="img/icon_instrument.png"  alt=""/>
                 </div>
-                <div class="list-item-border-bottom  list-item-content rt">
+                <div class="list-item-border-bottom  list-item-content rt" ng-click="modalDevice.show()">
                     <span class="list-item-lf-text">设备要求</span>
                     <span class="list-item-rt-text">
                          <i class="icon ion-ios-arrow-right inline-block"></i>
                       </span>
-                    <span class="rt">
-                        <img src="img/icon_instr_baiban.png" alt=""/>
-                        <img src="img/icon_instr_huatong.png" alt=""/>
-                         <img src="img/icon_instr_touyingyi.png" alt=""/>
-                    </span>
+                    <div class="rt device-icon">
+                        <img ng-if="!iMeeting.device.huatong" src="img/icon_instr_huatong.png" alt=""/>
+                        <img ng-if="iMeeting.device.huatong" src="img/icon_instr_huatong_select.png" alt=""/>
+                        <img ng-if="!iMeeting.device.baiban" src="img/icon_instr_baiban.png" alt=""/>
+                        <img ng-if="iMeeting.device.baiban" src="img/icon_instr_baiban_select.png" alt=""/>
+                        <img ng-if="!iMeeting.device.touyingyi" src="img/icon_instr_touyingyi.png" alt=""/>
+                        <img ng-if="iMeeting.device.touyingyi" src="img/icon_instr_touyingyi_select.png" alt=""/>
+
+                    </div>
                 </div>
             </div>
-            <div class="item list-item-style list-item-last">
+            <div class="item list-item-style" ng-click="modalRepeat.show()">
                 <div class="lf list-item-img">
                     <img src="img/icon_repeat.png"  alt=""/>
                 </div>
                 <div class="list-item-content rt">
                     <span class="list-item-lf-text">重复预定</span>
-                    <span class="list-item-rt-text">永不<i class="icon ion-ios-arrow-right"></i></span>
+                    <span class="list-item-rt-text">
+                        <span ng-if="!iMeeting.repeat.week.val && !iMeeting.repeat.month.val">永不</span>
+
+
+                        <span ng-if="iMeeting.repeat.week.val">
+                            每周
+                        </span>
+                        <span ng-if="iMeeting.repeat.month.val">
+                            每月
+                        </span>
+                        <i class="icon ion-ios-arrow-right"></i></span>
                 </div>
             </div>
-
+        </div>
         <div class="div-search">
             <a  class="button-search" >立即搜索</a>
         </div>

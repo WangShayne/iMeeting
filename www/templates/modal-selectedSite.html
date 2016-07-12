@@ -1,13 +1,14 @@
-<ion-view>
-  <ion-nav-title>
-      <span class="theme-text-color title-text">厂区位置</span>
-  </ion-nav-title>
-    <ion-nav-buttons side="left">
-       <button class="button button-clear" ng-click="goBack()"><i class="ion-arrow-left-c nav-button-back"></i></button>
-    </ion-nav-buttons>
-   <ion-nav-buttons side="right">
-       <button class="nav-button-form" ng-click="confirmSite()">确定</button>
-   </ion-nav-buttons>
+<ion-modal-view>
+
+    <ion-header-bar class="bar bar-header theme-nav-bar">
+        <button class="button button-clear" ng-click="modalSite.hide()"><i class="ion-arrow-left-c nav-button-back"></i></button>
+        <h1 class="title theme-text-color title-text">厂区位置</h1>
+        <a class="button nav-button-form" ng-click="confirmSite()">确定</a>
+    </ion-header-bar>
+
+
+
+
     <ion-content class="background-color">
         <div class="row list-style no-lf-padding">
             <div class="col-33">
@@ -25,4 +26,4 @@
             </div>
         </div>
     </ion-content>
-</ion-view>
+</ion-modal-view>

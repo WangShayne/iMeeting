@@ -1,0 +1,40 @@
+<ion-modal-view>
+    <ion-header-bar class="bar bar-header theme-nav-bar">
+        <button class="button button-clear" ng-click="modalDevice.hide()"><i class="ion-arrow-left-c nav-button-back"></i></button>
+        <h1 class="title theme-text-color title-text">选择设备</h1>
+        <a class="button nav-button-form" ng-click="confirmDevice()">确定</a>
+    </ion-header-bar>
+
+
+    <ion-content class="background-color">
+        <div class="list list-style">
+            <div class="item list-item-style" ng-click="deviceBaiban()">
+                <div class="lf list-item-img ">
+                    <img src="img/icon_instr2_baiban.png"  alt=""/>
+                </div>
+                <div class="list-item-border-bottom  list-item-content  rt ">
+                    <span class="list-item-lf-text">白板</span>
+                    <i ng-if="baiban" class="icon ion-checkmark-round theme-text-color rt"></i>
+                </div>
+            </div>
+            <div class="item list-item-style" ng-click="deviceHuatong()">
+                <div class="lf list-item-img ">
+                    <img src="img/icon_instr2_huatong.png"  alt=""/>
+                </div>
+                <div class="list-item-border-bottom  list-item-content  rt ">
+                    <span class="list-item-lf-text">话筒</span>
+                    <i ng-if="huatong" class="icon ion-checkmark-round theme-text-color rt"></i>
+                </div>
+            </div>
+            <div class="item list-item-style " ng-click="deviceTouyingyi()">
+                <div class="lf list-item-img ">
+                    <img src="img/icon_instr2_touyingyi.png"  alt=""/>
+                </div>
+                <div class="list-item-content list-item-content rt ">
+                    <span class="list-item-lf-text">投影仪</span>
+                    <i ng-if="touyingyi" class="icon ion-checkmark-round theme-text-color rt"></i>
+                </div>
+            </div>
+        </div>
+    </ion-content>
+</ion-modal-view>

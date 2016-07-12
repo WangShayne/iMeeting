@@ -51,11 +51,11 @@ angular.module("iMeeting",["ionic","iMeeting.controllers"])
             })
             //iMeetingҳ�������ת
             //ѡ��λ��ҳ��
-            .state("location",{
-                url:"/location",
-                templateUrl:"templates/tabs-iMeeting-location.html",
+           /* .state("device",{
+                url:"/device",
+                templateUrl:"templates/modal-selectedDevice.html",
                 controller:"tabs-iMeeting"
-            })
+            })*/
 
            .state("tabs.reserve",{
                 url:"/tabs-reserve",
